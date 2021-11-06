@@ -8,14 +8,12 @@ api = Api(app)
 
 class HelloWorld1(Resource):
     def get(self):
-        name = request.args.get('name')
-        if name == None:
-            name = "world"
+        name = request.args.get('name', 'world')
         return {'hello': name}
-    
+
     def post(self):
         data = request.get_json()
-        return {'hello': data['name']}
+        return {'hello': data.get('name', 'world')}
 
 class HelloWorld2(Resource):
     def get(self, name):
