@@ -21,6 +21,3 @@ class HelloWorld2(Resource):
 
 api.add_resource(HelloWorld1, '/hello')
 api.add_resource(HelloWorld2, '/hello/<name>')
-
-if __name__ == "__main__":
-    app.run(debug=True)
